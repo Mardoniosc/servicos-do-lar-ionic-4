@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Financeiro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let item of financeiro">
+    <ion-card-header>
+      <strong>
+        {{ item.nome }}
+      </strong>
+    </ion-card-header>
+    <ion-list>
+      <ion-item>
+        <h2>{{ item.descricao }}</h2>
+      </ion-item>
+      <ion-item>
+        <p><strong>Valor: </strong>R$ {{ item.valor | currency }}</p>
+      </ion-item>
+      <ion-item>
+        <h2>Pagamento: {{ item.estado ? 'Pago' : 'Pendente' }}</h2>
+      </ion-item>
+      <ion-item>
+        <a (click)="downloadPDF(url)" ion-button block> Download Boleto </a>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

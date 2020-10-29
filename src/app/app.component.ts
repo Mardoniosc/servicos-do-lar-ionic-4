@@ -18,9 +18,9 @@ export class AppComponent implements OnInit {
       icon: "mail",
     },
     {
-      title: "Logout",
-      url: "/login",
-      icon: "close",
+      title: "financeiro",
+      url: "/financeiro",
+      icon: "card",
     },
   ];
 
