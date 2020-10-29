@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <a ion-item-sliding *ngFor='let item of servicos' [href]="apiwhatsapp(item)">
+      <ion-item>
+        <ion-label>{{item.nome}}</ion-label>
+      </ion-item>
+    </a>
+  </ion-list>
+</ion-content>
