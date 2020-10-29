@@ -11,9 +11,9 @@
   <ion-list>
     <a ion-item-sliding *ngFor='let item of servicos' [href]="apiwhatsapp(item)">
       <ion-item>
-        <ion-avatar slot="start">
+        <ion-thumbnail slot="start">
           <img [src]="item?.imagem">
-        </ion-avatar>
+        </ion-thumbnail>
         <ion-label>{{item.nome}}</ion-label>
       </ion-item>
     </a>

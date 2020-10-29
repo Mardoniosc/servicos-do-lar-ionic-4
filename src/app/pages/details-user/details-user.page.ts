@@ -20,6 +20,14 @@ export class DetailsUserPage implements OnInit {
 
   usuario: Usuario = this.storangeService.getLocalUser();
 
+  servicos: Array<string> = [
+    'Elétrico',
+    'Hidráulico',
+    'Transporte',
+    'Informática',
+    'Marcenaria'
+  ];
+
   constructor(
     public navCtrl: NavController,
     public menu: MenuController,

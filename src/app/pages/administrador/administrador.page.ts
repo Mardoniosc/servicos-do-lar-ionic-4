@@ -9,6 +9,8 @@ import { StorangeService } from 'src/shared/services';
   styleUrls: ['./administrador.page.scss']
 })
 export class AdministradorPage implements OnInit {
+  usuariosFiltrados: Usuario[] = [];
+
   usuarios: Usuario[] = [
     { id: 1, nomeSobrenome: 'Fernando Cledicis', localidade: 'São Sebastião' },
     { id: 2, nomeSobrenome: 'Marcos Hyodao', localidade: 'Aguas Claras' },
@@ -24,7 +26,20 @@ export class AdministradorPage implements OnInit {
     public storangeService: StorangeService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.usuariosFiltrados = this.usuarios;
+  }
+
+  filtraUsuarioPeloNome(nome: string): void {
+    console.log(nome);
+    if (!nome) {
+      this.usuariosFiltrados = this.usuarios;
+    } else {
+      this.usuariosFiltrados = this.usuarios.filter((x) =>
+        x.nomeSobrenome.trim().toLowerCase().includes(nome.trim().toLowerCase())
+      );
+    }
+  }
 
   detalhesUser(user: Usuario) {
     this.storangeService.setLocalUser(user);
