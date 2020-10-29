@@ -1,5 +1,7 @@
 {
   "name": "manServices",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
