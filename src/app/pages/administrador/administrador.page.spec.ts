@@ -9,7 +9,7 @@ describe('AdministradorPage', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdministradorPage ],
+      declarations: [AdministradorPage],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 

@@ -1,40 +1,49 @@
-import { NgModule } from "@angular/core";
-import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
+import { NgModule } from '@angular/core';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: "",
-    redirectTo: "home",
-    pathMatch: "full",
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
   },
   {
-    path: "login",
+    path: 'login',
     loadChildren: () =>
-      import("./pages/login/login.module").then((m) => m.LoginPageModule),
+      import('./pages/login/login.module').then((m) => m.LoginPageModule)
   },
   {
-    path: "home",
+    path: 'home',
     loadChildren: () =>
-      import("./pages/home/home.module").then((m) => m.HomePageModule),
+      import('./pages/home/home.module').then((m) => m.HomePageModule)
   },
   {
     path: 'administrador',
-    loadChildren: () => import('./pages/administrador/administrador.module').then( m => m.AdministradorPageModule)
+    loadChildren: () =>
+      import('./pages/administrador/administrador.module').then(
+        (m) => m.AdministradorPageModule
+      )
   },
   {
     path: 'details-user',
-    loadChildren: () => import('./pages/details-user/details-user.module').then( m => m.DetailsUserPageModule)
+    loadChildren: () =>
+      import('./pages/details-user/details-user.module').then(
+        (m) => m.DetailsUserPageModule
+      )
   },
   {
     path: 'financeiro',
-    loadChildren: () => import('./pages/financeiro/financeiro.module').then( m => m.FinanceiroPageModule)
-  },
+    loadChildren: () =>
+      import('./pages/financeiro/financeiro.module').then(
+        (m) => m.FinanceiroPageModule
+      )
+  }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}
