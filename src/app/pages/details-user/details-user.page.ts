@@ -3,8 +3,7 @@ import {
   AlertController,
   LoadingController,
   MenuController,
-  NavController,
-  NavParams
+  NavController
 } from '@ionic/angular';
 import { Usuario } from 'src/shared';
 import { StorangeService } from 'src/shared/services';
@@ -23,7 +22,6 @@ export class DetailsUserPage implements OnInit {
 
   constructor(
     public navCtrl: NavController,
-    public navParams: NavParams,
     public menu: MenuController,
     public loadingCtl: LoadingController,
     public storangeService: StorangeService,

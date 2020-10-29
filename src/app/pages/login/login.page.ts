@@ -43,10 +43,10 @@ export class LoginPage implements OnInit {
 
   autenticacao() {
     if (this.creds.email === 'admin' && this.creds.senha === 'admin') {
-      this.navCtrl.navigateRoot('administrador');
+      this.navCtrl.navigateRoot('/administrador');
     } else {
       this.menu.enable(true);
-      this.navCtrl.navigateRoot('home');
+      this.navCtrl.navigateRoot('/home');
     }
   }
 

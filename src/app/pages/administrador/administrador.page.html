@@ -1,9 +1,16 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>administrador</ion-title>
+    <ion-title color="tertiary">Administrador</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content padding>
+  <ion-card *ngFor="let user of usuarios">
+      <ion-card-header (click)="detalhesUser(user)">
+        <strong>{{ user.nomeSobrenome }} </strong> -
+        <span>{{ user.localidade }}</span>
+      </ion-card-header>
+    </ion-card>
+    
+    <ion-button expand="block" fill="outline" color="tertiary" (click)="logout()">SAIR</ion-button>
 </ion-content>

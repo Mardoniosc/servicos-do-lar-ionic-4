@@ -1,9 +1,64 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>details-user</ion-title>
+    <ion-title color="tertiary">Envio de Boleto</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      <strong>
+        codigo do usuário: {{ usuario.id }}
+      </strong>
+    </ion-card-header>
+    <ion-list>
+      <ion-item>
+        <h2> Usuário: {{ usuario.nomeSobrenome}}</h2>
+      </ion-item>
+      <ion-item>
+        <p><strong>Localidade: </strong>{{ usuario.localidade }}</p>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Dados Para Envio
+      </ion-card-title>
+    </ion-card-header>
+    <ion-list>
+      <ion-item>
+          <ion-input placeholder="Nome"></ion-input><br>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Descrição"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="number" placeholder="Valor"></ion-input>
+      </ion-item>
+      <ion-list>
+        <ion-radio-group value="estadoBoleto">
+          <ion-list-header>
+            <ion-label>Estado Boleto</ion-label>
+          </ion-list-header>
+          <ion-item>
+            <ion-label>PAGO</ion-label>
+            <ion-radio color="tertiary" slot="start" value="PAGO"></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>PENDENTE</ion-label>
+            <ion-radio color="tertiary" slot="start" value="PENDENTE"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+      <ion-item>
+        <input type="file" (change)="atualizaArquivo($event)"/>
+      </ion-item>
+      <ion-button expand="block" fill="outline" color="tertiary" (click)="enviarArquivo()">Enviar</ion-button>
+    </ion-list>
+  </ion-card>
 
 </ion-content>
